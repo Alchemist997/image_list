@@ -1,0 +1,45 @@
+.MuiModal-root {
+  .image-item {
+    max-width: 80vw;
+    max-height: 90vh;
+    object-fit: contain;
+
+    &--error {
+      @extend %image-item--error;
+    }
+  }
+}
+
+.modal-content-wrap {
+  outline: 0;
+  display: flex;
+
+  .loader_ring {
+    position: absolute;
+    z-index: 997;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .arrow {
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: color $default-transition;
+
+    &:hover {
+      color: $main-light;
+    }
+
+    &--left {
+      left: 20px;
+    }
+
+    &--right {
+      right: 20px;
+    }
+  }
+}

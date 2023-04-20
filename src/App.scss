@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import-normalize;
+
+$main-light: #eee;
+$main: darken($main-light, 30);
+$main-bc: #222;
+$default-transition: 0.2s;
+
+%image-item--error {
+  position: absolute;
+  top: calc(50% - 1em);
+  left: calc(50% - 1em);
+  width: 2em;
+  height: 2em;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background-color: $main-bc;
+  font-size: 16px;
+  color: $main;
+}
+
+@import './components/ImagesContainer/ImagesContainer.scss';
+@import './components/ImageItem/ImageItem.scss';
+@import './components/ModalCustom/ModalCustom.scss';

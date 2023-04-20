@@ -1,0 +1,102 @@
+.MuiImageList-root.MuiImageList-standard {
+  overflow-y: visible;
+  grid-auto-rows: minmax(150px, auto);
+}
+
+.bottom-panel {
+  background-color: rgba($main, 0.8);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__container {
+    .git-btn {
+      color: $main-light;
+      cursor: pointer;
+      width: 1.5em;
+      height: 1.5em;
+      transition: $default-transition;
+
+      &-wrap {
+        display: flex;
+      }
+
+      &:hover {
+        color: $main-bc;
+      }
+    }
+
+    &.MuiContainer-root {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  .MuiNativeSelect-root {
+    flex-shrink: 0;
+
+    .MuiNativeSelect-select.MuiNativeSelect-standard {
+      padding-left: 10px;
+      color: $main-light;
+
+      option {
+        background-color: $main-bc;
+      }
+    }
+
+    svg {
+      color: $main-light;
+    }
+  }
+}
+
+.MuiPagination-root {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.MuiPagination-ul {
+  min-height: 50px;
+  justify-content: space-between;
+  color: $main-light;
+
+  .MuiPaginationItem-root:not(.MuiPaginationItem-ellipsis) {
+    &.Mui-selected,
+    &:hover {
+      background-color: lighten($main-bc, 20);
+    }
+  }
+
+  .MuiPaginationItem-ellipsis {
+    cursor: default;
+  }
+
+  & > li {
+    & div,
+    & button,
+    & svg {
+      color: inherit;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .MuiImageList-root {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    // !important использован из-за срочности, чтобы не создавать mui-theme,
+    // но иметь возможность переопределить inline-стиль.
+    // Обычно я избегаю его использования
+  }
+}
+
+@media (max-width: 599px) {
+  .bottom-panel {
+    padding: 10px;
+  }
+
+  .MuiPagination-root {
+    display: none;
+  }
+}

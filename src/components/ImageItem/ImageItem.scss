@@ -1,0 +1,43 @@
+.MuiImageListItem-root {
+  transition: box-shadow $default-transition;
+
+  .image-item {
+    &.zero-saturation {
+      filter: saturate(0);
+    }
+
+    &--error {
+      @extend %image-item--error;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    opacity: 0;
+    transition: color $default-transition;
+
+    &:hover {
+      color: darken(red, 10);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 12px darken($main, 20);
+
+    & .close {
+      opacity: 1;
+    }
+  }
+}
+
+.MuiImageListItemBar-title {
+  text-align: center;
+}
+
+@media (max-width: 639px) {
+  .MuiImageListItem-root .close {
+    opacity: 1;
+  }
+}
